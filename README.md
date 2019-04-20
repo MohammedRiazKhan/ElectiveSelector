@@ -20,4 +20,10 @@
 - Using a browser: navigate tot http://localhost/ElectiveSelector/index.php
 
 
+## Setting up the Database
+
+- Create a Database named University, using PHPMyAdmin or MySQL Workbench
+- Run the script in the /scripts folder, to create and populate the tables
+
+
 

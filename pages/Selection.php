@@ -6,13 +6,30 @@
     <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+    <?php
+
+        $selection = "";
+
+        if(isset($_POST['saveSelection']))
+        {
+            
+        }
+        else if(isset($_POST['cancel'])){
+
+            header("location: ../index.php");
+
+        }
+
+    ?>
+
     <div class="container">
         <div class="row">
             <div class="col-12" id="login-form">
                 <h5>Your Selection</h5>
                 <hr />
                 <h6>You chose</h6>
-                <p>a</p>
+                <p><?php echo $selection?></p>
 
                 <br />
                 <button type="submit" class="btn btn-primary">Exit</button>
