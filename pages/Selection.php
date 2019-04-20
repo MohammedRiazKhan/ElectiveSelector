@@ -28,6 +28,9 @@
         }
         else if(isset($_POST['cancel'])){
 
+
+            echo "<script> alert('asd') </script>";
+
             header("location: ../index.php");
 
         }
