@@ -10,3 +10,14 @@
 - Rename folder to ElectiveSelector
 - Move to /var/www/html/
 - Using a browser: navigate tot http://localhost/ElectiveSelector/index.php
+
+
+### Windows - WAMP Stack
+
+- Clone or Download repo
+- Rename folder to ElectiveSelector
+- Move to c:/wamp/www
+- Using a browser: navigate tot http://localhost/ElectiveSelector/index.php
+
+
+
