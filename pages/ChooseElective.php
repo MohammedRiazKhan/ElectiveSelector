@@ -17,7 +17,7 @@
         {
             $studentNumber = $_POST['studentNum'];
 
-            $query = "SELECT studentNumber FROM STUDENT WHERE studentNumber = '$studentNumber' AND isEnrolled = 0";
+            $query = "SELECT studentNumber FROM STUDENT WHERE studentNumber = '$studentNumber' AND electiveId IS NULL";
 
             $result = mysqli_query($dbconnect, $query);
 
@@ -30,6 +30,10 @@
                 //redirects to the chooseElectivePage if successful
                 //header("location: pages/ChooseElective.php");
                 $user = $studentNumber;
+
+                $getElectives = "SELECT electiveId, electiveName FROM ELECTIVE";
+
+                $courseResult = mysqli_query($dbconnect, $getElectives);
 
             }
             else{
@@ -59,14 +63,25 @@
                 <form action="http://localhost/ElectiveSelector/pages/Selection.php" method="post">
                     <div class="form-group">
                         <div class="form-group">
+                            <label for="firstChoice">Elective Choice</label>
+                            <select class="form-control" id="firstChoice" name="electiveChoice">
+                                <?php 
+                                
+                                    if($courseResult){
+                                        while($courseRow = mysqli_fetch_array($courseResult)){
+                                        
+                                            echo "<option value='".$courseRow['electiveId']."' name='c'>".$courseRow['electiveName']."</option>";
 
-                        
-                            <label for="firstChoice">Choice 1</label>
-                            <select class="form-control" id="firstChoice">
-                                <option>Options from database</option>
+                                        }
+                                    }
+                                
+                                ?>
                             </select>
                         </div>
                     </div>
+
+                    <input type="hidden" name="studNum" value="<?php echo $studentNumber?>"> 
+
                     <button type="submit" name="saveSelection" class="btn btn-primary">Save</button>
                     <button type="cancel" name="cancel" class="btn btn-primary">Cancel</button>
                 </form>

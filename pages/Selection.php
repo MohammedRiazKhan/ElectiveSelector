@@ -9,11 +9,22 @@
 
     <?php
 
-        $selection = "";
+        require_once('../dbconnector.php');
 
         if(isset($_POST['saveSelection']))
         {
+            $selection = $_POST['electiveChoice'];
+            $studentNum = $_POST['studNum'];
+            $updateStudent = "UPDATE STUDENT SET electiveId = $selection WHERE studentNumber = $studentNum";
             
+            mysqli_query($dbconnect, $updateStudent);
+
+            $selectedElective = "SELECT electiveName FROM ELECTIVE WHERE electiveId = $selection";
+        
+            $electiveResult = mysqli_query($dbconnect, $selectedElective);
+
+            $row = mysqli_fetch_array($electiveResult);
+
         }
         else if(isset($_POST['cancel'])){
 
@@ -27,12 +38,23 @@
         <div class="row">
             <div class="col-12" id="login-form">
                 <h5>Your Selection</h5>
+                <p class="text-right">
+                        <?php 
+                        
+                            echo "Student#:" . " $studentNum" ;
+
+                        ?>
+                    </p>
                 <hr />
                 <h6>You chose</h6>
-                <p><?php echo $selection?></p>
+                <p><?php echo $row['electiveName'];?></p>
+
 
                 <br />
-                <button type="submit" class="btn btn-primary">Exit</button>
+                <form action="http://localhost/ElectiveSelector/index.php" method="post">
+                    <button type="submit" class="btn btn-primary">Exit</button>
+                </form>
+               
             </div>
         </div>
     </div>
