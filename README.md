@@ -8,5 +8,5 @@
 
 - Clone or Download repo
 - Rename folder to ElectiveSelector
-- Move to /var/www/html
+- Move to /var/www/html/
 - Using a browser: navigate tot http://localhost/ElectiveSelector/index.php
