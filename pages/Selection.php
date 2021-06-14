@@ -54,7 +54,7 @@
 
 
                 <br />
-                <form action="http://localhost/ElectiveSelector/index.php" method="post">
+                <form action="../index.php" method="post">
                     <button type="submit" class="btn btn-primary">Exit</button>
                 </form>
                

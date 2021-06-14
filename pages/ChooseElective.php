@@ -60,7 +60,7 @@
                 </div>
                
                 <hr />
-                <form action="http://localhost/ElectiveSelector/pages/Selection.php" method="post">
+                <form action="Selection.php" method="post">
                     <div class="form-group">
                         <div class="form-group">
                             <label for="firstChoice">Elective Choice</label>

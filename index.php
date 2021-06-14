@@ -48,7 +48,7 @@
             <div class="col-12" id="login-form">
                 <h5>Login to choose your elective</h5>
                 <hr />
-                <form action="http://localhost/ElectiveSelector/pages/ChooseElective.php" method="post" onsubmit="return validateLogin()">
+                <form action="pages/ChooseElective.php" method="post" onsubmit="return validateLogin()">
                     <div class="form-group">
                         <label for="studentNum">Student Number</label>
                         <input type="text" id="studentNum" name="studentNum" class="form-control" placeholder="Enter Student Number">
